@@ -1,10 +1,56 @@
-// Write a program that asks the user for an integer number and finds the sum of all natural numbers up to that number.
 
 
 
 
+#include <iostream>
+using namespace std;
 
+int search(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            return i + 1; 
+        }
+    }
+    return -1; 
+}
 
+int main() {
+    int n;
+    cout<<"Length of Array: ";
+    cin >> n;
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    cout<<"Array: [";
+    for (int i = 0; i < n; i++) 
+    {
+        if(i!=n-1)
+        {
+            
+        
+        cout<<arr[i]<<",";
+        }
+        else 
+        cout<<arr[i];
+    }
+    cout<<"]"<<endl;
+    
+    cout<<"Search: ";
+    int key;
+    cin >> key;
+
+    int pos = search(arr, n, key);
+
+    if (pos == -1) {
+        cout << "Not found" << endl;
+    } else {
+        cout << "Found at position: " << pos << endl;
+    }
+
+    return 0;
+}
 
 
 
